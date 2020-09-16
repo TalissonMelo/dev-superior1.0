@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from './components/Header';
+import './App.css';
 
 function App() {
   return (
-    <h1>Semana DevSyperior 1.0</h1>
+    <Header />
   );
 }
 

@@ -4,11 +4,11 @@ import { RecordItem } from '../Records/types';
 export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
   const mappedGames = games.map(game => {
     const filteredGames = records.filter(item => {
-      return item.gameTitle === game.title && item.gamePlatform === game.platform
+      return item.gameTitle === game.name && item.gamePlatform === game.platform
     });
 
     return {
-      x: `${game.title} | ${game.platform}`,
+      x: `${game.name} | ${game.platform}`,
       y: filteredGames.length
     }
     
@@ -18,7 +18,7 @@ export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
     return b.y - a.y;
   });
 
-  return sortedGames.slice(0, 8);
+  return sortedGames.slice(0, 13);
 };
 
 export const getPlatformChartData = (records: RecordItem[]) => {
